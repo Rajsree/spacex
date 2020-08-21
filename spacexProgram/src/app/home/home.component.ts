@@ -9,13 +9,9 @@ import { ApiService } from '../api.service';
 export class HomeComponent implements OnInit {
 
 	programs = [];
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
 	ngOnInit() {
-		this.apiService.get().subscribe((data:  any[])=>{
-			console.log(data);
-			this.programs = data;
-		})
 	}
 
 }

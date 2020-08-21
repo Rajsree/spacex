@@ -8,11 +8,13 @@ import { MatToolbarModule,  MatIconModule,  MatCardModule,  MatButtonModule,
    MatProgressSpinnerModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { ProgramcardComponent } from './programcard/programcard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ProgramcardComponent
   ],
   imports: [
     BrowserModule,

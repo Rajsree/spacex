@@ -1,0 +1,26 @@
+/*Desktop View*/
+
+.programcard {
+  display : grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+  grid-gap: 10px;
+  background-color: #e3e6e4;
+  padding: 10px;
+}
+
+.carditem {
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+}
+.carditem b {
+  color : midnightblue;
+}
+
+.imageholder {
+  background-color: #e3e6e4;
+  content: center;
+  align-items: center;
+}
+
+
