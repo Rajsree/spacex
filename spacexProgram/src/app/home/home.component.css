@@ -1,3 +1,39 @@
-* {
-  box-sizing: border-box;
+.spaceXtitle {
+  padding: 20px;
+  margin : 0px;
+}
+/* Mobile View */
+/* At viewport > 1440px, the max-width is 1440px and elements are center aligned */
+.homegrid {
+  display : grid;
+  grid-gap: 1rem;
+  max-width: 1440px;
+  align-self: center;
+  margin: auto;
+}
+
+.filtercard {
+  grid-row : auto;
+  grid-column: auto;
+  background-color: white;
+  align-items: center;
+}
+
+/* Tablet View */
+@media (min-width: 700px) {
+  .homegrid { grid-template-columns: repeat(3, 1fr); }
+  .filtercard { grid-column : 1 / 2;}
+  .programcards { grid-column: 2 / span 3;}
+}
+/* Desktop View */
+@media (min-width: 1024px) {
+  .homegrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .filtercard {
+    grid-column : 1 / 2;
+  }
+  .programcards {
+    grid-column:  2 / span 4;
+  }
 }

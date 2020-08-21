@@ -9,12 +9,14 @@ import { MatToolbarModule,  MatIconModule,  MatCardModule,  MatButtonModule,
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ProgramcardComponent } from './programcard/programcard.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProgramcardComponent
+    ProgramcardComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
