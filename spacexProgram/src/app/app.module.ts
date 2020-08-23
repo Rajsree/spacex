@@ -10,13 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ProgramcardComponent } from './programcard/programcard.component';
 import { FilterComponent } from './filter/filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProgramcardComponent,
-    FilterComponent
+    FilterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -26,8 +30,10 @@ import { FilterComponent } from './filter/filter.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

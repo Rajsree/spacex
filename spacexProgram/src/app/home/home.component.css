@@ -17,6 +17,9 @@
   grid-column: auto;
   background-color: white;
   align-items: center;
+  height: fit-content;
+  margin: 10px 0px 5px 20px;
+  padding: 20px;
 }
 
 /* Tablet View */
