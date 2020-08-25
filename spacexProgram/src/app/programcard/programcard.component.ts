@@ -23,7 +23,10 @@ export class ProgramcardComponent implements OnChanges {
 	}
 
   ngOnChanges(): void {
-		// if (this.groupFilters) this.filterprogramslist(this.groupFilters, this.programs);
+		if (this.groupFilters)
+      //this.filterprogramslist(this.groupFilters, this.programs);
+      console.log("CHANGED :", this.groupFilters)
+      alert(this.groupFilters);
 	}
   //
   // filterprogramslist(filters: any, programs: any): void {
