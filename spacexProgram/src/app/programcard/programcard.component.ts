@@ -16,48 +16,22 @@ export class ProgramcardComponent implements OnChanges {
   private ref: ChangeDetectorRef) { }
 
 	ngOnInit() : void {
-		this.apiService.get().subscribe((data:  any[])=>{
+    console.log("GRP FLS OnInit:",this.groupFilters)
+		this.apiService.get(null).subscribe((data:  any[])=>{
 			console.log(data);
 			this.programs = data;
+      this.apiService.programst = this.programs;
 		})
 	}
 
   ngOnChanges(): void {
+    console.log("GRP FLS OnChanges :",this.groupFilters)
 		if (this.groupFilters)
-      //this.filterprogramslist(this.groupFilters, this.programs);
       console.log("CHANGED :", this.groupFilters)
-      alert(this.groupFilters);
+      this.apiService.get(this.groupFilters).subscribe((data : any[]) => {
+        this.programs = data;
+      })
 	}
-  //
-  // filterprogramslist(filters: any, programs: any): void {
-	// 	this.filteredprograms = this.programs;
-	// 	const keys = Object.keys(filters);
-	// 	const filterprogram = user => {
-	// 		let result = keys.map(key => {
-	// 			if (!~key.indexOf('age')) {
-	// 				if(user[key]) {
-	// 					return String(user[key]).toLowerCase().startsWith(String(filters[key]).toLowerCase())
-	// 				} else {
-	// 					return false;
-	// 				}
-	// 			}
-	// 		});
-	// 		result = result.filter(it => it !== undefined);
-	// 		if (filters['ageto'] && filters['agefrom']) {
-	// 			if (user['age']) {
-	// 				if (+user['age'] >= +filters['agefrom'] && +user['age'] <= +filters['ageto']) {
-	// 					result.push(true);
-	// 				} else {
-	// 					result.push(false);
-	// 				}
-	// 				} else {
-	// 					result.push(false);
-	// 				}
-	// 			}
-	// 		return result.reduce((acc, cur: any) => { return acc & cur }, 1)
-	// 	}
-	// 	this.filteredprograms = this.programs.filter(filterprogram);
-	// 	}
 
 
 
