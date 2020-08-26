@@ -5,10 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-
-
-  //setGroupFilter$ = new Subject<any>();
-  	//getGroupFilter = this.setGroupFilter$.asObservable();
+    programst = [];
 
     filterObj = {
       land_success : "",
@@ -21,16 +18,12 @@ export class ApiService {
   	constructor(private httpClient: HttpClient) {}
 
 
-  	// fetchUsers(): Observable<any> {
-  	// 	return of(USERS);
-  	// }
-
- //  private SERVER_URL = "https://api.spacexdata.com/v3/launches?limit=100";
- //
- // constructor(private httpClient: HttpClient) { }
-
-  public get(){
-    //  console.log('Analysing :' + getGroupFilter);
+  public get(newObj){
+    console.log("NEW OBJ "+JSON.stringify(newObj));
+    if(newObj) {
+      this.SERVER_URL = "https://api.spacexdata.com/v3/launches?limit=100&amp;launch_success="+newObj.launch_success+"&amp;land_success="+newObj.land_success+"&amp;launch_year="+newObj.launch_year;
+  }
+  console.log('API CALL : ' + this.SERVER_URL);
 		return this.httpClient.get(this.SERVER_URL);
 	}
 }

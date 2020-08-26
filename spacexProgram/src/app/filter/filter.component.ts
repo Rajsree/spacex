@@ -16,7 +16,7 @@ export class FilterComponent implements OnInit {
   	searchText: string = '';
   	constructor(private fb: FormBuilder,  	private apiService: ApiService) {}
 
-    filterObj = ApiService.filterObj;
+    filterObj = this.apiService.filterObj;
 
   	ngOnInit(): void {
   		this.buildForm();
@@ -31,22 +31,30 @@ export class FilterComponent implements OnInit {
   		});
     }
 
+
+     updateProgramsList(): void {
+       this.apiService.get(this.apiService.filterObj).subscribe((data:  any[])=>{
+         console.log(data);
+         this.apiService.programst = data;
+       })
+     }
+
     set_launch_year(year): void {
-      console.log("Lunch Year : ", year);
-      console.log("Filter in filterObj :", this.apiService.filterObj);
       this.apiService.filterObj.launch_year = year;
-      //console.log("Current status : Launch Year -> : " + this.launch_year + "Launch_success -> :"+this.launch_success+ "Land -> :" +this.land_success)
+      console.log("Filter in filterObj :", this.apiService.filterObj);
+      this.updateProgramsList();
     }
+
     set_launch_success(event): void {
-      console.log("Lunch Success : ", event);
       this.apiService.filterObj.launch_success = event.target.outerText;
       console.log("Filter in filterObj :", this.apiService.filterObj);
+      this.updateProgramsList();
     }
 
     set_land_success(event): void {
-      console.log("Land Success : ", event.value);
       this.apiService.filterObj.land_success = event.value;
       console.log("Filter in filterObj :", this.apiService.filterObj);
+      this.updateProgramsList();
     }
 
     // mycheck(filters): void {
