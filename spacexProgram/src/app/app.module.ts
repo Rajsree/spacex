@@ -12,7 +12,6 @@ import { ProgramcardComponent } from './programcard/programcard.component';
 import { FilterComponent } from './filter/filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { FilterPipe } from './filter.pipe';
     HomeComponent,
     ProgramcardComponent,
     FilterComponent,
-    FilterPipe
   ],
   imports: [
     BrowserModule,
