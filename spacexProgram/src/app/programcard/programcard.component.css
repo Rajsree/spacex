@@ -1,0 +1,36 @@
+/*Mobile View*/
+/* At viewport > 1440px, the max-width is 1440px and elements are center aligned */
+.programcard {
+  display : grid;
+  grid-gap: 10px;
+  background-color: #e3e6e4;
+  padding: 10px;
+}
+
+.imageholder {
+  background-color: #e3e6e4;
+  content: center;
+  align-items: center;
+}
+
+.carditem {
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+}
+.carditem b {
+  color : midnightblue;
+}
+
+/* Tablet View */
+@media (min-width: 700px) {
+  .programcard { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+  .programcard { grid-template-columns: repeat(4, 1fr); }
+}
+
+
+
